@@ -1,6 +1,7 @@
+import shuffle from "../utils/shuffle";
 import usePokemon from "../utils/usePokemon";
 
-export default function Card({ pokiId, setScore, tapped, setTapped }) {
+export default function Card({ pokiId, pokiIds, setPokiIds, setScore, tapped, setTapped }) {
   const url = `https://pokeapi.co/api/v2/pokemon/${pokiId}`;
   // console.log(url);
   const response = usePokemon(url);
@@ -18,6 +19,9 @@ export default function Card({ pokiId, setScore, tapped, setTapped }) {
         return score + 1;
       });
     }
+
+    setPokiIds((pokiIds) => shuffle(pokiIds));
+
   };
 
   if (response.loading) return "loading";
