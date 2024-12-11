@@ -8,7 +8,7 @@ export default function Game({ count, score, setScore, tapped, setTapped }) {
         return (
           <Card
             key={i}
-            pokiId={i + 1}
+            pokiId={Math.floor(Math.random() * 1000 * Date.now()) % 1000}
             score={score}
             setScore={setScore}
             tapped={tapped}

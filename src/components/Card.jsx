@@ -1,6 +1,6 @@
 import usePokemon from "../utils/usePokemon";
 
-export default function Card({ pokiId, score, setScore, tapped, setTapped }) {
+export default function Card({ pokiId, setScore, tapped, setTapped }) {
   const url = `https://pokeapi.co/api/v2/pokemon/${pokiId}`;
   // console.log(url);
   const response = usePokemon(url);
