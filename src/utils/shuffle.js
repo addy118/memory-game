@@ -19,8 +19,3 @@ export default function shuffle(arr) {
 
   return array;
 }
-
-const arr = [1, 2, 3, 4, 5];
-const shuffled = shuffle(arr);
-console.log(arr);
-console.log(shuffled);
