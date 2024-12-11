@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 
-export default function Score() {
-  const [score, setScore] = useState(0);
-  let highscore = score;
+export default function Score({ score, highscore, setHighscore }) {
+  useEffect(() => {
+    if (score > highscore) {
+      setHighscore(score);
+    }
+  }, [score, highscore]);
 
   return (
     <div className="flex flex-col items-start">
